@@ -104,6 +104,31 @@ export default function SignUp() {
           required
         />
 
+        <div>
+          <div className="subTitle">
+            <h2>Dados de Entrega</h2>
+          </div>
+
+          <input
+            name="cep"
+            type="text"
+            onChange={handleForm}
+            value={form.cep}
+            placeholder="CEP"
+            disabled={block}
+            required
+          />
+          <input
+            name="numero"
+            type="text"
+            onChange={handleForm}
+            value={form.numero}
+            placeholder="Número"
+            disabled={block}
+            required
+          />
+        </div>
+
         <button onClick={login}>{loading}</button>
       </form>
       <p onClick={() => navigate("/")}>Não tem uma conta? Cadastre-se!</p>
@@ -119,6 +144,7 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   div {
     display: flex;
     gap: 0.9rem;
@@ -127,11 +153,13 @@ const Main = styled.main`
     }
     margin-bottom: 1rem;
   }
+
   h1 {
     font-weight: 700;
     font-size: 2.2rem;
     line-height: 2.9rem;
   }
+
   p {
     font-size: 1rem;
     text-align: center;
@@ -139,6 +167,7 @@ const Main = styled.main`
     margin-top: 0.8rem;
     color: #ffb200;
   }
+
   form {
     width: 90%;
     display: flex;
@@ -146,6 +175,7 @@ const Main = styled.main`
     align-items: center;
     flex-direction: column;
     gap: 0.8rem;
+
     input {
       width: 100%;
       height: 3rem;
@@ -153,6 +183,7 @@ const Main = styled.main`
       border: 0.1rem solid #c4c1c1;
       border-radius: 0.5rem;
     }
+
     input::placeholder {
       font-family: "Inter";
       font-style: normal;
@@ -161,6 +192,7 @@ const Main = styled.main`
       padding-left: 0.5rem;
       color: #c4c1c1;
     }
+
     button {
       width: 100%;
       height: 3rem;
@@ -176,6 +208,32 @@ const Main = styled.main`
       font-weight: 700;
       font-size: 1.5rem;
       color: #ffffff;
+    }
+
+    div {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      margin-top: 0.2rem;
+
+      .subTitle {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        margin-bottom: -0rem;
+      }
+
+      h2 {
+        font-weight: 700;
+        font-size: 1.3rem;
+
+        color: #ffb200;
+      }
     }
   }
 `;
