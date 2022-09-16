@@ -98,11 +98,13 @@ const ProductImage = styled.img`
 `
 
 const ProductName = styled.p`
+    height: 20px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;   
     margin-bottom: 10px;
+    text-align: center;
 `
 
 const ProductPrice = styled.p`
