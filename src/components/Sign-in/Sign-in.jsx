@@ -2,7 +2,8 @@ import styled from "styled-components";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import Context from "../../contexts/UserContext";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ export default function SignIn() {
   const [block, setBlock] = useState(false);
   const [form, setForm] = useState({});
   const [blockButton, setBlockButton] = useState(false);
+  const { setToken, setEmail } = useContext(Context);
 
   function handleForm(event) {
     setForm({
@@ -118,7 +120,9 @@ const Main = styled.main`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     gap: 0.8rem;
+
     input {
       width: 100%;
       height: 3rem;
@@ -126,6 +130,7 @@ const Main = styled.main`
       border: 0.1rem solid #c4c1c1;
       border-radius: 0.5rem;
     }
+
     input::placeholder {
       font-family: "Inter";
       font-style: normal;
@@ -134,6 +139,7 @@ const Main = styled.main`
       padding-left: 0.5rem;
       color: #c4c1c1;
     }
+
     button {
       width: 100%;
       height: 3rem;
@@ -149,6 +155,10 @@ const Main = styled.main`
       font-weight: 700;
       font-size: 1.5rem;
       color: #ffffff;
+    }
+
+    div {
+      display: flex;
     }
   }
 `;
