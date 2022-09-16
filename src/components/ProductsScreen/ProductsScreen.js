@@ -29,8 +29,9 @@ export default function ProductsScreen(){
     }, []);
 
     function buildProductsList(){
+        console.log(productsList.length);
         if(productsList.length > 0){
-            productsList.map((product, id ) => {
+            return productsList.map((product, id ) => {
                 const { image_url, name, brand, price } = product;
                 return <Product key={id} image_url={image_url} name={name} brand={brand} price={price}/>
             });
@@ -63,7 +64,8 @@ const Banner = styled.img`
 
 const ProductsContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     margin-top: 20px;
 `
@@ -82,15 +84,17 @@ function Product(props){
 }
 
 const ProductContainer = styled.div`
-    height: 100vh;
+    width: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 `
 
 const ProductImage = styled.img`
     width: 187px;   
     height: 187px;
+    margin-bottom: 10px;
 `
 
 const ProductName = styled.p`
@@ -98,6 +102,7 @@ const ProductName = styled.p`
     font-style: normal;
     font-weight: 400;
     font-size: 14px;   
+    margin-bottom: 10px;
 `
 
 const ProductPrice = styled.p`
@@ -105,6 +110,7 @@ const ProductPrice = styled.p`
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
+    margin-bottom: 10px;
 `
 
 
