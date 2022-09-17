@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import { useState } from "react";
+import { toast } from "react-toastify";
+import { Report } from "notiflix/build/notiflix-report-aio";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -25,17 +27,13 @@ export default function SignUp() {
       form.email === "" ||
       form.password === "" ||
       form.name === "" ||
-      form.passwordConfirm === ""
+      form.passwordConfirm === "" ||
+      form.cep === "" ||
+      form.numero === ""
     ) {
-      alert("E-mail ou senha esta em branco");
-      setLoading("Cadastrar");
-      return;
-    } else if (form.passwordConfirm !== form.password) {
-      alert("As senhas não são iguais ");
-      setLoading("Cadastrar");
-      return;
-    } else if (form.password.length < 6 || form.passwordConfirm.length < 6) {
-      alert("As senhas tem que possuir no minimo 6 caracteres");
+      toast.error("E-mail ou senha esta em branco", {
+        toastId: "branco",
+      });
       setLoading("Cadastrar");
       return;
     } else {
@@ -44,11 +42,14 @@ export default function SignUp() {
         .post("http://localhost:5000/sign-up", body)
         .then(() => {
           setBlock(true);
+          Report.success("Cadastrado com sucesso", '"Seja bem-vindo" ', "Okay");
           navigate("/");
         })
         .catch((err) => {
           setBlock(true);
-          alert("Login ou senha inválidos");
+          toast.error("Algo esta faltando", {
+            toastId: "err",
+          });
           setLoading("Cadastrar");
           setBlock(false);
           console.log(err);

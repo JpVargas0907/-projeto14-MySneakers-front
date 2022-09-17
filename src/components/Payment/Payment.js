@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import styled from "styled-components";
 import Context from "../../contexts/UserContext";
 import bota from "../imgs/bota.svg";

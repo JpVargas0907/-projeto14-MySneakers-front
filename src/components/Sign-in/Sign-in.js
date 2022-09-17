@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import { useState, useContext } from "react";
 import Context from "../../contexts/UserContext";
+import { toast } from "react-toastify";
+import { Report } from "notiflix/build/notiflix-report-aio";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -24,7 +26,9 @@ export default function SignIn() {
     event.preventDefault();
     setLoading(<ThreeDots color="white" />);
     if (form.email === "" || form.password === "") {
-      alert("Emaill ou senha esta em branco");
+      toast.error("Emaill ou senha esta em branco", {
+        toastId: "EmBranco",
+      });
       setLoading("ENTRAR");
       return;
     } else {
@@ -41,7 +45,9 @@ export default function SignIn() {
         .catch(() => {
           setBlockButton(true);
           setBlock(true);
-          alert("Login ou senha inválidos");
+          toast.error("Login ou senha inválidos", {
+            toastId: "invalido",
+          });
           setLoading("ENTRAR");
           setBlock(false);
           setBlockButton(false);
