@@ -7,6 +7,7 @@ import jaqueta from "../imgs/jaqueta.svg";
 import Sale from "./ sale";
 
 export default function Payment() {
+  const navigate = useNavigate();
   const [select, setSelect] = useState("");
 
   const obj = [
@@ -85,7 +86,7 @@ export default function Payment() {
           <h1>Total:</h1>
           <h1>R$ 219,80</h1>
         </div>
-        <button>FINALIZAR COMPRA</button>
+        <button onClick={() => navigate("/")}>FINALIZAR COMPRA</button>
       </Footer>
     </>
   );
