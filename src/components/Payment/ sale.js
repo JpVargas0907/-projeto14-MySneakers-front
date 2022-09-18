@@ -6,13 +6,13 @@ export default function Sale(props) {
   return (
     <Main>
       <ul>
-        {props.teste.map((e, i) => {
+        {props.cart.map((e, i) => {
           return (
             <li key={i}>
               <span>
-                <img src={jaqueta} />
-                <p>{e.nome}</p>
-                <p>{e.preco}</p>
+                <img src={e.image_url} />
+                <p>{e.name}</p>
+                <p>{e.price}</p>
               </span>
             </li>
           );

@@ -13,8 +13,8 @@ import { useState , useEffect } from "react";
 
 
 export default function CartScreen(){
-    const { cart, setCart, itensCounter, setItensCounter } = useContext(UserContext);
-    let [sum, setSum] = useState(0);    
+    const { sum, setSum, cart, setCart, itensCounter, setItensCounter } = useContext(UserContext);
+        
 
     function builCartItens(){
         if(cart.length > 0){

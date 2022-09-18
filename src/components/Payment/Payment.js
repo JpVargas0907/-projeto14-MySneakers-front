@@ -1,37 +1,16 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Context from "../../contexts/UserContext";
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext";
 import bota from "../imgs/bota.svg";
 import jaqueta from "../imgs/jaqueta.svg";
 import Sale from "./ sale";
 
 export default function Payment() {
   const navigate = useNavigate();
-  const [select, setSelect] = useState("");
-
-  const obj = [
-    {
-      produto: { bota },
-      nome: "Bota de Couro",
-      preco: "R$ 99,90",
-    },
-    {
-      produto: { jaqueta },
-      nome: "Moletom",
-      preco: "R$ 119,90",
-    },
-    {
-      produto: { bota },
-      nome: "Bota de Couro",
-      preco: "R$ 99,90",
-    },
-    {
-      produto: { jaqueta },
-      nome: "Moletom",
-      preco: "R$ 119,90",
-    },
-  ];
+  const [sum, select, setSelect] = useState("");
+  const { cart } = useContext(UserContext);
 
   return (
     <>
@@ -78,15 +57,15 @@ export default function Payment() {
           <h1>Resumo do Pedido</h1>
         </div>
 
-        <Sale teste={obj} />
+        <Sale cart={cart} />
       </Main>
 
       <Footer>
         <div>
           <h1>Total:</h1>
-          <h1>R$ 219,80</h1>
+          <h1>{sum}</h1>
         </div>
-        <button onClick={() => navigate("/")}>FINALIZAR COMPRA</button>
+        <button onClick={() => navigate("/products")}>FINALIZAR COMPRA</button>
       </Footer>
     </>
   );
