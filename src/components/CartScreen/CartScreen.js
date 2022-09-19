@@ -112,11 +112,11 @@ const BuyButton = styled.button`
     border-radius: 5px;
     border-style: none;
     margin-bottom: 5px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
-    color: #FFFFFF;
+    font-size: 1.5rem;
+    color: #ffffff;
 `
 
 const BackToHome = styled.p`
