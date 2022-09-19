@@ -58,7 +58,6 @@ export default function CartScreen(){
             <Link to={'/payment'}>
                 <BuyButton>FINALIZAR COMPRA</BuyButton>
             </Link>
-            <BuyButton>FINALIZAR COMPRA</BuyButton>
             <Link to={'/products'}>
                 <BackToHome>Ver mais produtos</BackToHome>
             </Link>
