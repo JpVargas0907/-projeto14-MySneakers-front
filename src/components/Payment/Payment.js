@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import UserContext from "../../contexts/UserContext";
 import Sale from "./ sale";
+import { Report } from "notiflix/build/notiflix-report-aio";
 
 export default function Payment() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function Payment() {
   function cleanCart(){
     setCart([]);
     setItensCounter(0);
-    alert("Compra realizada com sucesso! :)");
+    Report.success("Compra realizada com sucesso!", "Obrigado e volte sempre!", "Okay");
     navigate("/products")
   }
 
