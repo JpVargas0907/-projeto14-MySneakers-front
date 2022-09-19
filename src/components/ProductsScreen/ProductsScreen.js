@@ -13,7 +13,6 @@ import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 import { Link } from "react-router-dom";
 
-
 export default function ProductsScreen(){
     const [ productsList, setProductsList ] = useState([]);
     const [product, setProduct] = useState({});
@@ -26,7 +25,7 @@ export default function ProductsScreen(){
             }
         }
 
-        const URL = "http://localhost:5000/products";
+        const URL = `https://projeto14.herokuapp.com/products`;
         const promise = axios.get(URL, config);
 
         promise.then((res) => {

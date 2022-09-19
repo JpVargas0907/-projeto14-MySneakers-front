@@ -39,7 +39,7 @@ export default function SignUp() {
     } else {
       const body = { ...form };
       axios
-        .post("http://localhost:5000/sign-up", body)
+        .post(`https://projeto14.herokuapp.com/sign-up`, body)
         .then(() => {
           setBlock(true);
           Report.success("Cadastrado com sucesso", '"Seja bem-vindo" ', "Okay");

@@ -34,7 +34,7 @@ export default function SignIn() {
     } else {
       const body = { ...form };
       axios
-        .post("http://localhost:5000/sign-in", body)
+        .post("https://git.heroku.com/projeto14.git/sign-in", body)
         .then((res) => {
           setBlock(true);
           setToken(res.data.token);
@@ -85,7 +85,7 @@ export default function SignIn() {
 
         <button onClick={login}>{loading}</button>
       </form>
-      <p onClick={() => navigate("/sign-up")}>
+      <p onClick={() => navigate(`/sign-up`)}>
         Não tem uma conta? Cadastre-se!
       </p>
     </Main>
