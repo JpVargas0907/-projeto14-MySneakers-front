@@ -74,7 +74,7 @@ const Container = styled.div`
 `
 
 const Banner = styled.img`
-    margin-top: 80px;
+    margin-top: 60px;
     width: 100vw;
     object-fit: fill;
     margin-bottom: 28px;
