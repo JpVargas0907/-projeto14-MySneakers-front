@@ -43,6 +43,11 @@ const Main = styled.main`
     width: 100%;
   }
 
+  img{
+    width: 35px;
+    height: 35px;
+  }
+
   span {
     width: 100%;
     height: 6rem;

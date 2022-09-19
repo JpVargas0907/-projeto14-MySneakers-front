@@ -6,8 +6,8 @@ import Sale from "./ sale";
 
 export default function Payment() {
   const navigate = useNavigate();
-  const [sum, select, setSelect] = useState("");
-  const { cart } = useContext(UserContext);
+  const [select, setSelect] = useState("");
+  const { cart, sum } = useContext(UserContext);
 
   return (
     <>
