@@ -34,7 +34,7 @@ export default function SignIn() {
     } else {
       const body = { ...form };
       axios
-        .post("https://git.heroku.com/projeto14.git/sign-in", body)
+        .post("https://projeto14.herokuapp.com/sign-in", body)
         .then((res) => {
           setBlock(true);
           setToken(res.data.token);
