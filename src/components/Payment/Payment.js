@@ -7,7 +7,14 @@ import Sale from "./ sale";
 export default function Payment() {
   const navigate = useNavigate();
   const [select, setSelect] = useState("");
-  const { cart, sum } = useContext(UserContext);
+  const { cart, setCount, setCart, sum } = useContext(UserContext);
+
+  function cleanCart(){
+    setCart([]);
+    setCount(0);
+    alert("Compra realizada com sucesso! :)");
+    navigate("/products")
+  }
 
   return (
     <>
@@ -24,30 +31,30 @@ export default function Payment() {
         </div>
 
         <div>
-          <Button
+          <OptionButton
             select={select === "cartao"}
             onClick={() => {
               setSelect("cartao");
             }}
           >
             Cartão de crédito
-          </Button>
-          <Button
+          </OptionButton>
+          <OptionButton
             select={select === "pix"}
             onClick={() => {
               setSelect("pix");
             }}
           >
             PIX
-          </Button>
-          <Button
+          </OptionButton>
+          <OptionButton
             select={select === "boleto"}
             onClick={() => {
               setSelect("boleto");
             }}
           >
             Boleto Bancário
-          </Button>
+          </OptionButton>
         </div>
 
         <div className="subTitle">
@@ -62,7 +69,7 @@ export default function Payment() {
           <h1>Total:</h1>
           <h1>{sum}</h1>
         </div>
-        <button onClick={() => navigate("/products")}>FINALIZAR COMPRA</button>
+        <button onClick={cleanCart}>FINALIZAR COMPRA</button>
       </Footer>
     </>
   );
@@ -153,7 +160,7 @@ const Main = styled.main`
   }
 `;
 
-const Button = styled.button`
+const OptionButton = styled.button`
   width: 100%;
   height: 2.8rem;
 
