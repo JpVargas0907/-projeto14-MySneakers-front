@@ -39,7 +39,7 @@ export default function SignIn() {
           setBlock(true);
           setToken(res.data.token);
           setEmail(res.data.id);
-          navigate("/home");
+          navigate("/products");
           setBlockButton(true);
         })
         .catch(() => {
