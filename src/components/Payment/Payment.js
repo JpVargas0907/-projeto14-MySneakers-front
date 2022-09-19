@@ -7,11 +7,11 @@ import Sale from "./ sale";
 export default function Payment() {
   const navigate = useNavigate();
   const [select, setSelect] = useState("");
-  const { cart, setCount, setCart, sum } = useContext(UserContext);
+  const { cart, setItensCounter, setCart, sum } = useContext(UserContext);
 
   function cleanCart(){
     setCart([]);
-    setCount(0);
+    setItensCounter(0);
     alert("Compra realizada com sucesso! :)");
     navigate("/products")
   }
