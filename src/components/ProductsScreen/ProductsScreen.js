@@ -17,8 +17,7 @@ import { Link } from "react-router-dom";
 export default function ProductsScreen(){
     const [ productsList, setProductsList ] = useState([]);
     const [product, setProduct] = useState({});
-    const { cart, setCart, itensCounter, setItensCounter } = useContext(UserContext);
-    const token = '89d4f052-c3a8-4752-9248-603b1cff67e4';
+    const { cart, token, setCart, itensCounter, setItensCounter } = useContext(UserContext);
     
     useEffect(() => {
         const config = {

@@ -1,10 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
-import bota from "../imgs/bota.svg";
-import jaqueta from "../imgs/jaqueta.svg";
 import Sale from "./ sale";
 
 export default function Payment() {
